@@ -179,10 +179,7 @@ namespace trabajo_app_1
 
         private void listBoxPedido_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (button3.Click += )
-            { 
-                
-            }
+
 
         }
 
