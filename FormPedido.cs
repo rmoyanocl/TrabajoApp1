@@ -33,7 +33,7 @@ namespace trabajo_app_1
             {
                 try
                 {
-                    connectionString = "Server= 190.98.197.102; Database = rubenmoy_trabajo_app; Uid=rubenmoy_trabajo; Pwd=trabajoapp699;";
+                    connectionString = "Server= localhost; Database = trabajo_app; Uid=trabajo; Pwd=trabajoapp;";
                     connection.ConnectionString = connectionString;
                     connection.Open();
                     MessageBox.Show("La conexión se ha realizado con exito", "Bien hecho!");
