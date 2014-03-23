@@ -114,9 +114,11 @@ namespace trabajo_app_1
 
             //Agregar al ListBox
             listBoxPedido.Items.Add("RESTAURANTE EL QUERY");
+            listBoxPedido.Items.Add(" ");
             listBoxPedido.Items.Add("Alonso de Ovalle 1586, Santiago Centro");
             listBoxPedido.Items.Add("Teléfono: +56 2 2354 0600");
             listBoxPedido.Items.Add("Fecha: " + dateTimePickerFecha.Text);
+            listBoxPedido.Items.Add("Hora: " + dateTimePickerTime.Text);
             listBoxPedido.Items.Add(" ");
             listBoxPedido.Items.Add("Comida : " + comboBoxComida.Text);
             listBoxPedido.Items.Add("Postre : " + comboBoxPostre.Text);
