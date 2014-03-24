@@ -7,19 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Collections;
-using MySql.Data.MySqlClient;
+//using MySql.Data.MySqlClient;
 
 
 namespace trabajo_app_1
 {
     public partial class FormPedido : Form
     {
+        /*
         //INICIO Intento de Conexión a MySql Parte1
+         * 
         MySqlConnection connection = new MySqlConnection();
         String connectionString;
         List<Pedidos> listapedidos = new List<Pedidos>();
+         * 
         //FIN Intento de Conexión a MySql Parte1
-
+        */
     
         public FormPedido()
         {
@@ -27,13 +30,14 @@ namespace trabajo_app_1
             //IniciarConexion();
         }
             
-
+            /*
             //INICIO Intento de Conexión a MySql Parte2
+             * 
             private void IniciarConexion()
             {
                 try
                 {
-                    connectionString = "Server= localhost; Database = trabajo_app; Uid=trabajo; Pwd=trabajoapp;";
+                    connectionString = "Server= 190.98.197.102; Database = rubenmoy_trabajo_app; Uid=rubenmoy_trabajo; Pwd=trabajoapp699;";
                     connection.ConnectionString = connectionString;
                     connection.Open();
                     MessageBox.Show("La conexión se ha realizado con exito", "Bien hecho!");
@@ -45,7 +49,8 @@ namespace trabajo_app_1
                 }
             }
             //FIN Intento de Conexión a MySql Parte2
-            
+             * 
+            */
 
          static void main()
         {
@@ -113,7 +118,7 @@ namespace trabajo_app_1
             //listBoxPedido.Items.Add("Datos Mesa " + 
 
             //Agregar al ListBox
-            listBoxPedido.Items.Add("RESTAURANTE EL QUERY");
+            listBoxPedido.Items.Add("RESTAURANTE RESTOGROUP");
             listBoxPedido.Items.Add(" ");
             listBoxPedido.Items.Add("Alonso de Ovalle 1586, Santiago Centro");
             listBoxPedido.Items.Add("Teléfono: +56 2 2354 0600");
@@ -134,8 +139,9 @@ namespace trabajo_app_1
             comboBoxBebidas.Text = "";
             comboBoxVinos.Text = "";
 
-
+            /*
             //INICIO Intento de Conexión a MySql Parte3
+             * 
             MySqlCommand instruccion = connection.CreateCommand();
             instruccion.CommandText = "SELECT Bebida1, Comida1, Postre1, Vino1 FROM Pedidos";
             MySqlDataReader reader = instruccion.ExecuteReader();
@@ -150,8 +156,9 @@ namespace trabajo_app_1
             }
             DataGridView1.DataSource = listapedidos;
             reader.Dispose();
+             * 
             //FIN Intento de Conexión a MySql Parte3
-
+            */
         }
              
 
@@ -165,24 +172,26 @@ namespace trabajo_app_1
 
         }
 
-
         private void comboBoxVinos_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-           //Intento de ocultar comboBox según item seleccionado :(
-           /* if (comboBoxBebidas.SelectedItem.Equals("Vino"))
+            /*
+            //Intento de ocultar comboBox según item seleccionado :(
+            
+            if (comboBoxBebidas.SelectedItem.Equals("Vino"))
             {
-                
-                comboBoxVinos.Visible = false;
-
-            } */
+                comboBoxVinos.Enabled = true;
+            }
+            else
+            {
+                comboBoxVinos.Enabled = false;
+            }
+            * 
+            */
 
         }
 
         private void listBoxPedido_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -193,6 +202,11 @@ namespace trabajo_app_1
         private void FormPedido_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     
 }
