@@ -16,32 +16,9 @@ namespace trabajo_app_1
             InitializeComponent();
         }
 
+
         private void buttonMesa1_Click(object sender, EventArgs e)
         {
-
-            /*
-            //Cambiar estado del boton mesa dependiendo del item seleccionado en el combobox
-            *
-            if(comboBoxMesa1.SelectedItem.Equals("Libre"))
-            {
-                this.buttonMesa1.BackColor = Color.Green;
-            }
-            if (comboBoxMesa1.SelectedItem.Equals("Reservada"))
-            {
-                this.buttonMesa1.BackColor = Color.Brown;
-            }
-            if (comboBoxMesa1.SelectedItem.Equals("Ocupada"))
-            {
-                this.buttonMesa1.BackColor = Color.Red;
-            }
-            else
-            {
-                return;
-            }
-            * 
-            */
-
-
             if (radioButtonLibre1.Checked == true)
             {
 
@@ -93,8 +70,6 @@ namespace trabajo_app_1
                 return;
             }
         }
-
-
 
 
 
@@ -157,35 +132,103 @@ namespace trabajo_app_1
         {
             if (radioButtonLibre3.Checked == true)
             {
-                this.buttonMesa3.BackColor = Color.LawnGreen;
+                DialogResult resultLibre3 = MessageBox.Show("Liberar esta mesa?",
+                "Mesas Disponibles",
+                MessageBoxButtons.YesNo);
+
+                if (resultLibre3 == DialogResult.Yes)
+                {
+                    this.buttonMesa3.BackColor = Color.LawnGreen;
+                }
+                else
+                {
+                    return;
+                }
             }
             if (radioButtonOcupada3.Checked == true)
             {
-                this.buttonMesa3.BackColor = Color.Red;
+                DialogResult resultOcupada3 = MessageBox.Show("Ocupar esta mesa?",
+                "Mesas Disponibles",
+                MessageBoxButtons.YesNo);
+
+                if (resultOcupada3 == DialogResult.Yes)
+                {
+                    this.buttonMesa3.BackColor = Color.Red;
+                }
+                else
+                {
+                    return;
+                }
             }
             if (radioButtonReservada3.Checked == true)
             {
-                this.buttonMesa3.BackColor = Color.Cyan;
+                DialogResult resultReservada3 = MessageBox.Show("Reservar esta mesa?",
+                "Mesas Disponibles",
+                MessageBoxButtons.YesNo);
+
+                if (resultReservada3 == DialogResult.Yes)
+                {
+                    this.buttonMesa3.BackColor = Color.Cyan;
+                }
+                else
+                {
+                    return;
+                }
             }
             else
             {
                 return;
             }
         }
+
+
 
         private void buttonMesavip1_Click(object sender, EventArgs e)
         {
             if (radioButtonLibreVip1.Checked == true)
             {
-                this.buttonMesavip1.BackColor = Color.LawnGreen;
+                DialogResult resultLibreVip1 = MessageBox.Show("Leberar esta mesa?",
+                "Mesas Disponibles",
+                MessageBoxButtons.YesNo);
+
+                if (resultLibreVip1 == DialogResult.Yes)
+                {
+                    this.buttonMesavip1.BackColor = Color.LawnGreen;
+                }
+                else
+                {
+                    return;
+                }
             }
             if (radioButtonOcupadaVip1.Checked == true)
             {
-                this.buttonMesavip1.BackColor = Color.Red;
+                DialogResult resultOcupadaVip1 = MessageBox.Show("Ocupar esta mesa?",
+                "Mesas Disponibles",
+                MessageBoxButtons.YesNo);
+
+                if (resultOcupadaVip1 == DialogResult.Yes)
+                {
+                    this.buttonMesavip1.BackColor = Color.Red;
+                }
+                else
+                {
+                    return;
+                }
             }
             if (radioButtonReservadaVip1.Checked == true)
             {
-                this.buttonMesavip1.BackColor = Color.Cyan;
+                DialogResult resultReservadaVip1 = MessageBox.Show("Reservar esta mesa?",
+                "Mesas Disponibles",
+                MessageBoxButtons.YesNo);
+
+                if (resultReservadaVip1 == DialogResult.Yes)
+                {
+                    this.buttonMesavip1.BackColor = Color.Cyan;
+                }
+                else
+                {
+                    return;
+                }
             }
             else
             {
@@ -193,19 +236,54 @@ namespace trabajo_app_1
             }
         }
 
+
+
         private void buttonMesavip2_Click(object sender, EventArgs e)
         {
             if (radioButtonLibreVip2.Checked == true)
             {
-                this.buttonMesavip2.BackColor = Color.LawnGreen;
+                DialogResult resultLibreVip2 = MessageBox.Show("Leberar esta mesa?",
+                "Mesas Disponibles",
+                MessageBoxButtons.YesNo);
+
+                if (resultLibreVip2 == DialogResult.Yes)
+                {
+                    this.buttonMesavip2.BackColor = Color.LawnGreen;
+                }
+                else
+                {
+                    return;
+                }
             }
             if (radioButtonOcupadaVip2.Checked == true)
             {
-                this.buttonMesavip2.BackColor = Color.Red;
+                DialogResult resultOcupadaVip2 = MessageBox.Show("Ocupar esta mesa?",
+                "Mesas Disponibles",
+                MessageBoxButtons.YesNo);
+
+                if (resultOcupadaVip2 == DialogResult.Yes)
+                {
+                    this.buttonMesavip2.BackColor = Color.Red;
+                }
+                else
+                {
+                    return;
+                }
             }
             if (radioButtonReservadaVip2.Checked == true)
             {
-                this.buttonMesavip2.BackColor = Color.Cyan;
+                DialogResult resultReservadaVip2 = MessageBox.Show("Reservar esta mesa?",
+                "Mesas Disponibles",
+                MessageBoxButtons.YesNo);
+
+                if (resultReservadaVip2 == DialogResult.Yes)
+                {
+                    this.buttonMesavip2.BackColor = Color.Cyan;
+                }
+                else
+                {
+                    return;
+                }
             }
             else
             {
@@ -217,15 +295,48 @@ namespace trabajo_app_1
         {
             if (radioButtonLibreVip3.Checked == true)
             {
-                this.buttonMesavip3.BackColor = Color.LawnGreen;
+                DialogResult resultLibreVip3 = MessageBox.Show("Liberar esta mesa?",
+                "Mesas Disponibles",
+                MessageBoxButtons.YesNo);
+
+                if (resultLibreVip3 == DialogResult.Yes)
+                {
+                    this.buttonMesavip3.BackColor = Color.LawnGreen;
+                }
+                else
+                {
+                    return;
+                }
             }
             if (radioButtonOcupadaVip3.Checked == true)
             {
-                this.buttonMesavip3.BackColor = Color.Red;
+                DialogResult resultOcupadaVip3 = MessageBox.Show("Ocupar esta mesa?",
+                "Mesas Disponibles",
+                MessageBoxButtons.YesNo);
+
+                if (resultOcupadaVip3 == DialogResult.Yes)
+                {
+                    this.buttonMesavip3.BackColor = Color.Red;
+                }
+                else
+                {
+                    return;
+                }
             }
             if (radioButtonReservadaVip3.Checked == true)
             {
-                this.buttonMesavip3.BackColor = Color.Cyan;
+                DialogResult resultReservadaVip3 = MessageBox.Show("Reservar esta mesa?",
+                "Mesas Disponibles",
+                MessageBoxButtons.YesNo);
+
+                if (resultReservadaVip3 == DialogResult.Yes)
+                {
+                    this.buttonMesavip3.BackColor = Color.Cyan;
+                }
+                else
+                {
+                    return;
+                }
             }
             else
             {
