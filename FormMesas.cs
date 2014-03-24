@@ -102,21 +102,56 @@ namespace trabajo_app_1
         {
             if (radioButtonLibre2.Checked == true)
             {
-                this.buttonMesa2.BackColor = Color.LawnGreen;
+                DialogResult resultLibre2 = MessageBox.Show("Liberar esta mesa?",
+                "Mesas Disponibles",
+                MessageBoxButtons.YesNo);
+
+                if (resultLibre2 == DialogResult.Yes)
+                {
+                    this.buttonMesa2.BackColor = Color.LawnGreen;
+                }
+                else
+                {
+                    return;
+                }
             }
             if (radioButtonOcupada2.Checked == true)
             {
-                this.buttonMesa2.BackColor = Color.Red;
+                DialogResult resultOcupada2 = MessageBox.Show("Ocupar esta mesa?",
+                "Mesas Disponibles",
+                MessageBoxButtons.YesNo);
+
+                if (resultOcupada2 == DialogResult.Yes)
+                {
+                    this.buttonMesa2.BackColor = Color.Red;
+                }
+                else
+                {
+                    return;
+                }
             }
             if (radioButtonReservada2.Checked == true)
             {
-                this.buttonMesa2.BackColor = Color.Cyan;
+                DialogResult resultReservada2 = MessageBox.Show("Reservar esta mesa?",
+                "Mesas Disponibles",
+                MessageBoxButtons.YesNo);
+
+                if (resultReservada2 == DialogResult.Yes)
+                {
+                    this.buttonMesa2.BackColor = Color.Cyan;
+                }
+                else
+                {
+                    return;
+                }
             }
             else
             {
                 return;
             }
         }
+
+
 
         private void buttonMesa3_Click(object sender, EventArgs e)
         {
