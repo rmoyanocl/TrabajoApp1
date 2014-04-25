@@ -7,56 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Collections;
-//using MySql.Data.MySqlClient;
+using System.Drawing.Printing;
 
+
+/*
+ * RESTOGROUP
+*/
 
 namespace trabajo_app_1
 {
     public partial class FormPedido : Form
     {
-        /*
-        //INICIO Intento de Conexión a MySql Parte1
-         * 
-        MySqlConnection connection = new MySqlConnection();
-        String connectionString;
-        List<Pedidos> listapedidos = new List<Pedidos>();
-         * 
-        //FIN Intento de Conexión a MySql Parte1
-        */
-    
         public FormPedido()
         {
             InitializeComponent();
-            //IniciarConexion();
-        }
-            
-            /*
-            //INICIO Intento de Conexión a MySql Parte2
-             * 
-            private void IniciarConexion()
-            {
-                try
-                {
-                    connectionString = "Server= 190.98.197.102; Database = trabajo_app; Uid=trabajo; Pwd=trabajoapp699;";
-                    connection.ConnectionString = connectionString;
-                    connection.Open();
-                    MessageBox.Show("La conexión se ha realizado con exito", "Bien hecho!");
-                                    
-                }
-                catch (MySqlException)
-                {
-                    MessageBox.Show("Ocurrió un error al intentar conectar", "ERROR");
-                }
-            }
-            //FIN Intento de Conexión a MySql Parte2
-             * 
-            */
+            //comboBoxVinos.Enabled = false;
 
-         static void main()
+        }
+
+        static void main()
         {
-            ArrayList lista1 = new ArrayList();
-            
-            
+
         }
          
         private void label1_Click(object sender, EventArgs e)
@@ -70,23 +41,29 @@ namespace trabajo_app_1
 
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
-            //Agregar al ListBox
-            listBoxResult.Items.Add("--Datos de la Mesa--");
-            listBoxResult.Items.Add("Nombre Mesero : " + comboBoxMesero.Text);
-            listBoxResult.Items.Add("Mesa: " + comboBoxMesa.Text);
-            listBoxResult.Items.Add("Fecha: " + dateTimePickerFecha.Text);
-            //listBoxResult.Items.Add("--Fin Comentario--");
+            if (comboBoxMesero.SelectedIndex.Equals(-1) || comboBoxMesa.SelectedIndex.Equals(-1))
+            {
+                MessageBox.Show("Llene todos los datos");
+            }
+            else
+            {
+                //Agregar al ListBox
+                listBoxResult.Items.Add("--Datos de la Mesa--");
+                listBoxResult.Items.Add("Nombre Mesero : " + comboBoxMesero.Text);
+                listBoxResult.Items.Add("Mesa: " + comboBoxMesa.Text);
+                listBoxResult.Items.Add("Fecha: " + dateTimePickerFecha.Text);
+                //listBoxResult.Items.Add("--Fin Comentario--");
 
-            //Limpiar ComboBox
-            comboBoxMesero.Text = "";
-            comboBoxMesa.Text = "";
-            dateTimePickerFecha.Text = "";
-            //comboBoxAperitivo.Text = "";
-
+                //Limpiar ComboBox
+                comboBoxMesero.Text = "";
+                comboBoxMesa.Text = "";
+                dateTimePickerFecha.Text = "";
+                //comboBoxAperitivo.Text = "";
+            }
         }
-
 
         private void listBoxResult_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -112,53 +89,47 @@ namespace trabajo_app_1
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {      
+        {
 
-            listBoxPedido.Items.Add("--Inicio Pedido--");
-            //listBoxPedido.Items.Add("Datos Mesa " + 
-
-            //Agregar al ListBox
-            listBoxPedido.Items.Add("RESTAURANTE RESTOGROUP");
-            listBoxPedido.Items.Add(" ");
-            listBoxPedido.Items.Add("Alonso de Ovalle 1586, Santiago Centro");
-            listBoxPedido.Items.Add("Teléfono: +56 2 2354 0600");
-            listBoxPedido.Items.Add("Fecha: " + dateTimePickerFecha.Text);
-            listBoxPedido.Items.Add("Hora: " + dateTimePickerTime.Text);
-            listBoxPedido.Items.Add(" ");
-            listBoxPedido.Items.Add("Comida : " + comboBoxComida.Text);
-            listBoxPedido.Items.Add("Postre : " + comboBoxPostre.Text);
-            listBoxPedido.Items.Add("Bebida : " + comboBoxBebidas.Text);
-            listBoxPedido.Items.Add("Vino : " + comboBoxVinos.Text);
-            listBoxPedido.Items.Add(" ");
-            listBoxPedido.Items.Add("*Gracias Por Su Preferencia*");
-            listBoxPedido.Items.Add("--Fin Pedido--");
-
-            //Limpiar ComboBox
-            comboBoxComida.Text = "";
-            comboBoxPostre.Text = "";
-            comboBoxBebidas.Text = "";
-            comboBoxVinos.Text = "";
-
-            /*
-            //INICIO Intento de Conexión a MySql Parte3
-             * 
-            MySqlCommand instruccion = connection.CreateCommand();
-            instruccion.CommandText = "SELECT Bebida1, Comida1, Postre1, Vino1 FROM Pedidos";
-            MySqlDataReader reader = instruccion.ExecuteReader();
-            while (reader.Read())
+            if (comboBoxBebidas.SelectedIndex.Equals(-1) || (comboBoxComida.SelectedIndex.Equals(-1) || comboBoxPostre.SelectedIndex.Equals(-1) || comboBoxVinos.SelectedIndex.Equals(-1)))
             {
-                Pedidos ObjPedidos = new Pedidos();
-                ObjPedidos.Bebida1 = reader["Bebida1"].ToString();
-                ObjPedidos.Comida1 = reader["Comida1"].ToString();
-                ObjPedidos.Postre1 = reader["Postre1"].ToString();
-                ObjPedidos.Vino1 = reader["Vino1"].ToString();
+                MessageBox.Show("Llene todos los datos");
+            }
+            else
+            {
+                listBoxPedido.Items.Add("--Inicio Pedido--");
+                //listBoxPedido.Items.Add("Datos Mesa " + 
+
+                //Agregar al ListBox
+                listBoxPedido.Items.Add("RESTAURANTE RESTOGROUP");
+                listBoxPedido.Items.Add(" ");
+                listBoxPedido.Items.Add("Alonso de Ovalle 1586, Santiago Centro");
+                listBoxPedido.Items.Add("Teléfono: +56 2 2354 0600");
+                listBoxPedido.Items.Add("Fecha: " + dateTimePickerFecha.Text);
+                listBoxPedido.Items.Add("Hora: " + dateTimePickerTime.Text);
+                listBoxPedido.Items.Add(" ");
+                listBoxPedido.Items.Add("Comida : " + comboBoxComida.Text);
+                listBoxPedido.Items.Add("Postre : " + comboBoxPostre.Text);
+                listBoxPedido.Items.Add("Bebida : " + comboBoxBebidas.Text);
+                listBoxPedido.Items.Add("Vino : " + comboBoxVinos.Text);
+                listBoxPedido.Items.Add(" ");
+                listBoxPedido.Items.Add("--Fin Pedido--");
+
+                //Limpiar ComboBox
+                comboBoxComida.Text = "";
+                comboBoxPostre.Text = "";
+                comboBoxBebidas.Text = "";
+                comboBoxVinos.Text = "";
+
+                int f;
+                for (f = 1; f <= 1; f++)
+                {
+                    textBoxNumPedido.Text = f.ToString();
+                }
+
+
 
             }
-            DataGridView1.DataSource = listapedidos;
-            reader.Dispose();
-             * 
-            //FIN Intento de Conexión a MySql Parte3
-            */
         }
              
 
@@ -174,19 +145,6 @@ namespace trabajo_app_1
 
         private void comboBoxVinos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*
-            //Intento de ocultar comboBox según item seleccionado :(
-            
-            if (comboBoxBebidas.SelectedItem.Equals("Vino"))
-            {
-                comboBoxVinos.Enabled = true;
-            }
-            else
-            {
-                comboBoxVinos.Enabled = false;
-            }
-            * 
-            */
 
         }
 
@@ -208,7 +166,83 @@ namespace trabajo_app_1
         {
 
         }
-    
+
+
+        private void buttonImprimir_Click(object sender, EventArgs e)
+        {
+            /*
+            if (listBoxPedido.Text.Length == 0)
+            {
+                MessageBox.Show("No hay datos para imprimir");
+            }
+            else
+            {
+            */
+                DialogResult resultimprimir = MessageBox.Show("Desea Guardar e Imprimir pedido?", "Imprimir",
+                MessageBoxButtons.YesNo);
+
+                if (resultimprimir == DialogResult.Yes)
+                {
+                    PrintDocument pd = new PrintDocument();
+                    pd.PrintPage += new PrintPageEventHandler(pd_PrintPage);
+                    pd.Print();
+                }
+                else
+                {
+                    return;
+                }
+            /*
+            }
+            */
+        }
+
+        private void pd_PrintPage(object sender, PrintPageEventArgs ev)
+        {
+            string tex = "";
+            for (int i = 0; i < listBoxPedido.Items.Count - 1; i++)
+            {
+                tex = tex + listBoxPedido.Items[i].ToString() + "\n";
+            }
+
+            Font printFont = new Font("3 of 9 Barcode", 18);
+            Font printFont1 = new Font("Times New Roman", 11, FontStyle.Bold);
+            SolidBrush br = new SolidBrush(Color.Black);
+            ev.Graphics.DrawString("Pedidos", printFont, br, 10, 65);
+            ev.Graphics.DrawString(tex, printFont1, br, 10, 85);
+        }
+
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            /*
+            if (listBoxPedido.Text.Length == 0)
+            {
+                MessageBox.Show("No hay datos para borrar");
+            }
+            else
+            {
+            */
+                DialogResult resulLimpiar = MessageBox.Show("Desea limpiar datos?", "Limpiar",
+            MessageBoxButtons.YesNo);
+
+                if (resulLimpiar == DialogResult.Yes)
+                {
+                    listBoxPedido.Items.Clear();
+                    textBoxNumPedido.Clear();
+                }
+                else
+                {
+                    return;
+                }
+            /*
+            }
+            */
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            
+        }
+
 }
 
 }
