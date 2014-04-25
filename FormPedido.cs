@@ -91,7 +91,8 @@ namespace trabajo_app_1
         private void button3_Click(object sender, EventArgs e)
         {
 
-            if (comboBoxBebidas.SelectedIndex.Equals(-1) || (comboBoxComida.SelectedIndex.Equals(-1) || comboBoxPostre.SelectedIndex.Equals(-1) || comboBoxVinos.SelectedIndex.Equals(-1)))
+            if (comboBoxBebidas.SelectedIndex.Equals(-1) || (comboBoxComida.SelectedIndex.Equals(-1) || 
+                comboBoxPostre.SelectedIndex.Equals(-1) || comboBoxVinos.SelectedIndex.Equals(-1)))
             {
                 MessageBox.Show("Llene todos los datos");
             }
